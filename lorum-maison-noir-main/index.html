@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>LORUM | Heritage Luxury Perfume House</title>
+  <meta name="description" content="LORUM is a heritage luxury perfume house composing five rare fragrances of amber, spice, leather, and gold." />
+  <meta name="theme-color" content="#070504" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LORUM | Heritage Luxury Perfume House" />
+  <meta property="og:description" content="Five rare fragrances of amber, spice, leather, and gold. Worn like a secret." />
+  <meta property="og:image" content="assets/og/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="assets/og/og.png" />
+
+  <link rel="preload" as="image" href="assets/img/goddess-pose-5.jpg" fetchpriority="high" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v=10" />
+
+  <script type="importmap">{ "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+    "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js",
+    "gsap/ScrollTrigger": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/ScrollTrigger.js",
+    "lenis": "https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.mjs"
+  } }</script>
+</head>
+
+<body>
+  <!-- Distinct per-section background (crossfades behind the transparent 3D) -->
+  <div id="stage-bg" aria-hidden="true">
+    <div class="stage-bg-layer is-on" data-layer="a"></div>
+    <div class="stage-bg-layer" data-layer="b"></div>
+    <div class="stage-bg-scrim"></div>
+  </div>
+
+  <!-- 3D stage (transparent canvas; bottle floats over the section background, drag to rotate) -->
+  <canvas id="webgl" aria-hidden="true"></canvas>
+
+  <header id="nav">
+    <a class="nav-brand" href="#hero" data-cursor>
+      <img src="assets/img/lorum-logo-transparent.png" alt="LORUM" class="nav-brand-logo" />
+      <span>LORUM</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#rooms" data-room="0" data-cursor>Collection</a>
+      <a href="#craft" data-cursor>Maison</a>
+      <a href="#closing" data-cursor>Acquire</a>
+    </nav>
+  </header>
+
+  <main id="scene-root">
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-inner hero-left">
+        <div class="hero-brand-crest reveal">
+          <img src="assets/img/lorum-logo-transparent.png" alt="LORUM Maison Crest" class="hero-logo-img" />
+        </div>
+        <p class="hero-eyebrow reveal">Heritage Maison &middot; Est. in Gold</p>
+        <h1 class="hero-title">LORUM</h1>
+        <p class="hero-tagline">The scent that travels.</p>
+        <p class="hero-intro reveal">A heritage house of amber, spice and gold. The body forgets; the scent remembers.</p>
+        <div class="hero-trust reveal">
+          <div class="trust-faces" aria-hidden="true"><span class="face"></span><span class="face"></span><span class="face"></span><span class="face"></span></div>
+          <span class="trust-meta">+50K wear LORUM</span>
+        </div>
+        <div class="hero-cta-row reveal">
+          <a class="btn hero-shop" href="#rooms" data-room="0" data-cursor><span class="btn-label">Shop the Collection</span></a>
+          <div class="hero-rating"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>4.9 &middot; 2,847 reviews</span></div>
+        </div>
+      </div>
+      <aside class="hero-card glass-pill reveal">
+        <div class="hero-card-top"><span>Sillage &middot; 5:42</span><span>Est. in Gold</span></div>
+        <h3 class="hero-card-title">Closer to gold.</h3>
+        <p class="hero-card-body">Worn so quietly you forget it is there, until someone leans in.</p>
+        <div class="hero-card-foot"><span>Ships in 14 days</span><span>Free worldwide</span></div>
+      </aside>
+      <div class="scroll-cue reveal" aria-hidden="true">
+        <span class="scroll-cue-text">Scroll to descend</span>
+        <span class="scroll-cue-line"></span>
+      </div>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section id="manifesto">
+      <div class="manifesto-inner">
+        <p class="manifesto-mark reveal">The House</p>
+        <p class="manifesto-body reveal">LORUM is a heritage of restraint, where every accord is aged like a fortune and worn like a secret. True opulence never announces itself, it lingers.</p>
+        <p class="manifesto-cue reveal" aria-hidden="true">The collection moves sideways &#8594;</p>
+      </div>
+    </section>
+
+    <!-- ROOMS: pinned horizontal gallery. Bottle centred + draggable; copy flanks it in two glass pills. -->
+    <section id="rooms" aria-label="The Collection">
+      <div class="rooms-content-track">
+
+        <article class="room-content" data-index="1" data-bottle="0" id="room-noctis-lorum" style="--accent:#c8772f">
+          <aside class="room-side room-side--left glass-pill reveal">
+            <span class="scent-num">01</span>
+            <h2 class="scent-name">Noctis Lorum</h2>
+            <p class="scent-subtitle">Amber Oriental Opulence</p>
+            <p class="scent-accord">Warm amber oriental with spiced resins</p>
+          </aside>
+          <div class="room-bottle-holder" id="noctis-bottle-holder">
+            <div class="bottle-halo-glow bottle-halo-glow--amber" aria-hidden="true"></div>
+            <img src="assets/img/bottle-01.png" alt="Noctis Lorum — LORUM Perfume Bottle" class="room-bottle-img" />
+            <div class="bottle-contact-shadow" aria-hidden="true"></div>
+          </div>
+          <aside class="room-side room-side--right glass-pill reveal">
+            <div class="scent-notes">
+              <div class="note-group"><h3 class="note-label">Top</h3><ul><li>Black Saffron</li><li>Bitter Cardamom</li><li>Candied Plum</li></ul></div>
+              <div class="note-group"><h3 class="note-label">Heart</h3><ul><li>Turkish Rose</li><li>Smoked Incense</li><li>Cinnamon Bark</li></ul></div>
+              <div class="note-group"><h3 class="note-label">Base</h3><ul><li>Aged Amber</li><li>Labdanum</li><li>Myrrh</li></ul></div>
+            </div>
+            <p class="scent-story">Poured in the dark hours when resins surrender their deepest warmth. A scent matured slow enough to feel like firelight on skin.</p>
+            <a class="btn buy-now" href="#closing" data-cursor><span class="btn-label">Acquire</span></a>
+          </aside>
+        </article>
+
+        <article class="room-content" data-index="2" data-bottle="1" id="room-ferrum-noir" style="--accent:#9a7a3a">
+          <aside class="room-side room-side--left glass-pill reveal">
+            <span class="scent-num">02</span>
+            <h2 class="scent-name">Ferrum Noir</h2>
+            <p class="scent-subtitle">Woody Aromatic Power</p>
+            <p class="scent-accord">Bold woody-aromatic with leather and pepper</p>
+          </aside>
+          <div class="room-bottle-holder" id="ferrum-bottle-holder">
+            <div class="bottle-halo-glow" aria-hidden="true"></div>
+            <img src="assets/img/bottle-02.png" alt="Ferrum Noir — LORUM Perfume Bottle" class="room-bottle-img" />
+            <div class="bottle-contact-shadow" aria-hidden="true"></div>
+          </div>
+          <aside class="room-side room-side--right glass-pill reveal">
+            <div class="scent-notes">
+              <div class="note-group"><h3 class="note-label">Top</h3><ul><li>Black Pepper</li><li>Wormwood</li><li>Juniper</li></ul></div>
+              <div class="note-group"><h3 class="note-label">Heart</h3><ul><li>Haitian Vetiver</li><li>Clary Sage</li><li>Geranium</li></ul></div>
+              <div class="note-group"><h3 class="note-label">Base</h3><ul><li>Smoked Leather</li><li>Patchouli</li><li>Oakmoss</li></ul></div>
+            </div>
+            <p class="scent-story">Forged for the hand that does not flinch. Aged against oakmoss until it reads like polished iron warmed by the body.</p>
+            <a class="btn buy-now" href="#closing" data-cursor><span class="btn-label">Acquire</span></a>
+          </aside>
+        </article>
+
+        <article class="room-content" data-index="3" data-bottle="2" id="room-velours-or" style="--accent:#c8a14e">
+          <aside class="room-side room-side--left glass-pill reveal">
+            <span class="scent-num">03</span>
+            <h2 class="scent-name">Velours Or</h2>
+            <p class="scent-subtitle">Refined Classic Luxury</p>
+            <p class="scent-accord">Suede and tobacco with golden amber</p>
+          </aside>
+          <div class="room-bottle-holder" id="velours-bottle-holder">
+            <div class="bottle-halo-glow bottle-halo-glow--ruby" aria-hidden="true"></div>
+            <img src="assets/img/bottle-03.png" alt="Velours Or — LORUM Perfume Bottle" class="room-bottle-img" />
+            <div class="bottle-contact-shadow" aria-hidden="true"></div>
+          </div>
+          <aside class="room-side room-side--right glass-pill reveal">
+            <div class="scent-notes">
+              <div class="note-group"><h3 class="note-label">Top</h3><ul><li>Bergamot</li><li>Pink Pepper</li><li>Saffron Thread</li></ul></div>
+              <div class="note-group"><h3 class="note-label">Heart</h3><ul><li>Honeyed Tobacco</li><li>Orris Suede</li><li>Jasmine</li></ul></div>
+              <div class="note-group"><h3 class="note-label">Base</h3><ul><li>Bourbon Vanilla</li><li>Golden Amber</li><li>Sandalwood</li></ul></div>
+            </div>
+            <p class="scent-story">Honeyed tobacco folds into orris suede like a glove kept for decades. It settles into the skin with the ease of inherited wealth.</p>
+            <a class="btn buy-now" href="#closing" data-cursor><span class="btn-label">Acquire</span></a>
+          </aside>
+        </article>
+
+        <article class="room-content" data-index="4" data-bottle="3" id="room-lume-vif" style="--accent:#b8923f">
+          <aside class="room-side room-side--left glass-pill reveal">
+            <span class="scent-num">04</span>
+            <h2 class="scent-name">Lume Vif</h2>
+            <p class="scent-subtitle">Fresh Spicy Modern</p>
+            <p class="scent-accord">Fresh-spicy with ambroxan and cedar</p>
+          </aside>
+          <div class="room-bottle-holder" id="lume-bottle-holder">
+            <div class="bottle-halo-glow bottle-halo-glow--pearl" aria-hidden="true"></div>
+            <img src="assets/img/bottle-04.png" alt="Lume Vif — LORUM Perfume Bottle" class="room-bottle-img" />
+            <div class="bottle-contact-shadow" aria-hidden="true"></div>
+          </div>
+          <aside class="room-side room-side--right glass-pill reveal">
+            <div class="scent-notes">
+              <div class="note-group"><h3 class="note-label">Top</h3><ul><li>Calabrian Bergamot</li><li>Sichuan Pepper</li><li>Pink Grapefruit</li></ul></div>
+              <div class="note-group"><h3 class="note-label">Heart</h3><ul><li>Lavender Absolute</li><li>Nutmeg</li><li>Cardamom</li></ul></div>
+              <div class="note-group"><h3 class="note-label">Base</h3><ul><li>Ambroxan</li><li>Virginia Cedar</li><li>Vetiver</li></ul></div>
+            </div>
+            <p class="scent-story">Sichuan pepper sparks against cool ambroxan and cedar. Restraint sharpened to a blade, contemporary yet unmistakably ours.</p>
+            <a class="btn buy-now" href="#closing" data-cursor><span class="btn-label">Acquire</span></a>
+          </aside>
+        </article>
+
+        <article class="room-content" data-index="5" data-bottle="4" id="room-soleil-clair" style="--accent:#ecc878">
+          <aside class="room-side room-side--left glass-pill reveal">
+            <span class="scent-num">05</span>
+            <h2 class="scent-name">Soleil Clair</h2>
+            <p class="scent-subtitle">Radiant Citrus Opener</p>
+            <p class="scent-accord">Luminous neroli citrus with soft musk</p>
+          </aside>
+          <aside class="room-side room-side--right glass-pill reveal">
+            <div class="scent-notes">
+              <div class="note-group"><h3 class="note-label">Top</h3><ul><li>Bitter Orange</li><li>Sicilian Bergamot</li><li>Petitgrain</li></ul></div>
+              <div class="note-group"><h3 class="note-label">Heart</h3><ul><li>Neroli</li><li>Orange Blossom</li><li>Green Mandarin</li></ul></div>
+              <div class="note-group"><h3 class="note-label">Base</h3><ul><li>White Musk</li><li>Blonde Woods</li><li>Amber Crystal</li></ul></div>
+            </div>
+            <p class="scent-story">Bitter orange and neroli pressed from the first blossom of the season, carried across the skin like sun moving over stone.</p>
+            <a class="btn buy-now" href="#closing" data-cursor><span class="btn-label">Acquire</span></a>
+          </aside>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <section id="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item">Noctis Lorum <em>&#10022;</em></span>
+        <span class="marquee-item">Ferrum Noir <em>&#10022;</em></span>
+        <span class="marquee-item">Velours Or <em>&#10022;</em></span>
+        <span class="marquee-item">Lume Vif <em>&#10022;</em></span>
+        <span class="marquee-item">Soleil Clair <em>&#10022;</em></span>
+        <span class="marquee-item" aria-hidden="true">Noctis Lorum <em>&#10022;</em></span>
+        <span class="marquee-item" aria-hidden="true">Ferrum Noir <em>&#10022;</em></span>
+        <span class="marquee-item" aria-hidden="true">Velours Or <em>&#10022;</em></span>
+        <span class="marquee-item" aria-hidden="true">Lume Vif <em>&#10022;</em></span>
+        <span class="marquee-item" aria-hidden="true">Soleil Clair <em>&#10022;</em></span>
+      </div>
+    </section>
+
+    <!-- COLLECTION INDEX -->
+    <section id="collection">
+      <div class="section-head">
+        <span class="section-kicker reveal">The Collection</span>
+        <h2 class="section-title reveal">Five Rare Compositions</h2>
+        <p class="section-lede reveal">Each decanted only when the scent has earned its name. Click a fragrance to enter its room.</p>
+      </div>
+      <ul class="collection-list">
+        <li class="collection-row reveal" style="--accent:#c8772f"><a href="#rooms" data-room="0" data-cursor><span class="collection-num">01</span><span class="collection-name">Noctis Lorum</span><span class="collection-accord">Amber Oriental Opulence</span><span class="collection-arrow" aria-hidden="true">&#8594;</span></a></li>
+        <li class="collection-row reveal" style="--accent:#9a7a3a"><a href="#rooms" data-room="1" data-cursor><span class="collection-num">02</span><span class="collection-name">Ferrum Noir</span><span class="collection-accord">Woody Aromatic Power</span><span class="collection-arrow" aria-hidden="true">&#8594;</span></a></li>
+        <li class="collection-row reveal" style="--accent:#c8a14e"><a href="#rooms" data-room="2" data-cursor><span class="collection-num">03</span><span class="collection-name">Velours Or</span><span class="collection-accord">Refined Classic Luxury</span><span class="collection-arrow" aria-hidden="true">&#8594;</span></a></li>
+        <li class="collection-row reveal" style="--accent:#b8923f"><a href="#rooms" data-room="3" data-cursor><span class="collection-num">04</span><span class="collection-name">Lume Vif</span><span class="collection-accord">Fresh Spicy Modern</span><span class="collection-arrow" aria-hidden="true">&#8594;</span></a></li>
+        <li class="collection-row reveal" style="--accent:#ecc878"><a href="#rooms" data-room="4" data-cursor><span class="collection-num">05</span><span class="collection-name">Soleil Clair</span><span class="collection-accord">Radiant Citrus Opener</span><span class="collection-arrow" aria-hidden="true">&#8594;</span></a></li>
+      </ul>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <div class="section-head">
+        <span class="section-kicker reveal">Worn &amp; Remembered</span>
+        <h2 class="section-title reveal">What lingers, lingers in memory</h2>
+      </div>
+      <div class="testimonial-grid">
+        <figure class="testimonial glass-pill reveal">
+          <blockquote>It does not announce itself. People lean in to find it, and then they remember it for weeks.</blockquote>
+          <figcaption>Private Patron &middot; Milan</figcaption>
+        </figure>
+        <figure class="testimonial glass-pill reveal">
+          <blockquote>I wore Noctis Lorum to a dinner of strangers. By dessert, three of them had asked what it was.</blockquote>
+          <figcaption>Private Collector</figcaption>
+        </figure>
+        <figure class="testimonial glass-pill reveal">
+          <blockquote>The only house my father and I both reach for. It feels inherited, even on the first wearing.</blockquote>
+          <figcaption>Private Patron &middot; London</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CRAFT -->
+    <section id="craft">
+      <div class="craft-inner">
+        <span class="section-kicker reveal">The Atelier</span>
+        <h2 class="craft-title reveal">Nothing is rushed, because gold is never in a hurry</h2>
+        <p class="craft-body reveal">Each composition is matured in oak and crystal over the slow turn of seasons, blended by a single master nose. We source resins by hand, distill in small batches, and decant only when the scent has earned its name.</p>
+        <div class="craft-stats">
+          <div class="craft-stat reveal"><span class="counter" data-target="1">1</span><span class="craft-stat-label">Master Nose</span></div>
+          <div class="craft-stat reveal"><span class="counter" data-target="5">5</span><span class="craft-stat-label">Rare Accords</span></div>
+          <div class="craft-stat reveal"><span><span class="counter" data-target="36">36</span><span class="craft-stat-suffix">mo</span></span><span class="craft-stat-label">Slowest Maturation</span></div>
+          <div class="craft-stat reveal"><span><span class="counter" data-target="100">100</span><span class="craft-stat-suffix">%</span></span><span class="craft-stat-label">Hand Decanted</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING / ACQUIRE -->
+    <section id="closing">
+      <div class="closing-inner">
+        <div class="closing-brand-crest reveal">
+          <img src="assets/img/lorum-logo-transparent.png" alt="LORUM Crest" class="closing-logo-img" />
+        </div>
+        <p class="closing-kicker reveal">LORUM</p>
+        <h2 class="closing-line reveal">Possess what cannot be borrowed.</h2>
+        <a class="btn closing-cta reveal" href="#rooms" data-room="0" data-cursor><span class="btn-label">Acquire the Collection</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/lorum-logo-transparent.png" alt="LORUM" class="footer-logo-img" />
+        <span class="footer-mark">LORUM</span>
+        <span class="footer-tag">The Weight of Gold</span>
+      </div>
+      <nav class="footer-col" aria-label="Maison">
+        <span class="footer-col-title">Maison</span>
+        <a href="#craft" data-cursor>The Atelier</a>
+        <a href="#manifesto" data-cursor>Philosophy</a>
+        <a href="#testimonials" data-cursor>Voices</a>
+      </nav>
+      <nav class="footer-col" aria-label="The Collection">
+        <span class="footer-col-title">Fragrances</span>
+        <a href="#rooms" data-room="0" data-cursor>Noctis Lorum</a>
+        <a href="#rooms" data-room="1" data-cursor>Ferrum Noir</a>
+        <a href="#rooms" data-room="2" data-cursor>Velours Or</a>
+        <a href="#rooms" data-room="3" data-cursor>Lume Vif</a>
+        <a href="#rooms" data-room="4" data-cursor>Soleil Clair</a>
+      </nav>
+      <nav class="footer-col" aria-label="House">
+        <span class="footer-col-title">House</span>
+        <a href="#closing" data-cursor>Acquire</a>
+        <a href="#hero" data-cursor>Private Atelier</a>
+        <a href="#hero" data-cursor>Correspondence</a>
+      </nav>
+    </div>
+    <div class="footer-base">
+      <span class="footer-copy">&copy; LORUM Maison. Possess what cannot be borrowed.</span>
+      <span class="footer-fine">LORUM Maison Noir &middot; Haute Parfumerie</span>
+    </div>
+  </footer>
+
+  <div class="cursor" aria-hidden="true"></div>
+  <script type="module" src="js/main.js?v=10"></script>
+</body>
+</html>

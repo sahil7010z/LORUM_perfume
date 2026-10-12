@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="LORUM">
+  <defs>
+    <linearGradient id="fg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ecc878"/>
+      <stop offset="0.55" stop-color="#c8a14e"/>
+      <stop offset="1" stop-color="#7c5e26"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="#070504"/>
+  <rect x="3.5" y="3.5" width="57" height="57" rx="10" fill="none" stroke="#c8a14e" stroke-opacity="0.45" stroke-width="1"/>
+  <text x="32" y="46" text-anchor="middle" font-family="Cormorant Garamond, Georgia, 'Times New Roman', serif" font-size="46" font-weight="600" fill="url(#fg)" letter-spacing="0">L</text>
+</svg>

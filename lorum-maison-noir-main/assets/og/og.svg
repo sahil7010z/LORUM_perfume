@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="LORUM — The Weight of Gold">
+  <defs>
+    <linearGradient id="ogbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d0907"/>
+      <stop offset="1" stop-color="#070504"/>
+    </linearGradient>
+    <radialGradient id="ogglow" cx="50%" cy="42%" r="60%">
+      <stop offset="0" stop-color="#c8a14e" stop-opacity="0.28"/>
+      <stop offset="0.45" stop-color="#c8a14e" stop-opacity="0.08"/>
+      <stop offset="0.8" stop-color="#070504" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ogtext" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ecc878"/>
+      <stop offset="0.55" stop-color="#c8a14e"/>
+      <stop offset="1" stop-color="#7c5e26"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ogbg)"/>
+  <rect width="1200" height="630" fill="url(#ogglow)"/>
+  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#c8a14e" stroke-opacity="0.35" stroke-width="1.5"/>
+  <ellipse cx="600" cy="300" rx="300" ry="300" fill="none" stroke="#c8a14e" stroke-opacity="0.30" stroke-width="1.5"/>
+  <ellipse cx="600" cy="300" rx="230" ry="230" fill="none" stroke="#ecc878" stroke-opacity="0.14" stroke-width="0.8"/>
+  <text x="600" y="150" text-anchor="middle" font-family="Jost, Helvetica, Arial, sans-serif" font-size="22" font-weight="400" fill="#a99e88" letter-spacing="12">HERITAGE LUXURY PERFUME HOUSE</text>
+  <text x="600" y="350" text-anchor="middle" font-family="Cormorant Garamond, Georgia, 'Times New Roman', serif" font-size="170" font-weight="500" fill="url(#ogtext)" letter-spacing="24">LORUM</text>
+  <text x="600" y="445" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="44" font-style="italic" font-weight="400" fill="#a99e88" letter-spacing="6">The Weight of Gold</text>
+  <text x="600" y="540" text-anchor="middle" font-family="Jost, Helvetica, Arial, sans-serif" font-size="18" font-weight="400" fill="#c8a14e" fill-opacity="0.75" letter-spacing="8">AMBER &#183; SPICE &#183; LEATHER &#183; GOLD</text>
+</svg>

@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="LORUM Maison Noir Logo">
+  <defs>
+    <!-- Rich 3D Liquid Gold Gradients -->
+    <linearGradient id="goldRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf2be"/>
+      <stop offset="20%" stop-color="#ecc878"/>
+      <stop offset="48%" stop-color="#c8a14e"/>
+      <stop offset="72%" stop-color="#8c6a28"/>
+      <stop offset="100%" stop-color="#e3be68"/>
+    </linearGradient>
+
+    <linearGradient id="goldLetter" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff5cc"/>
+      <stop offset="18%" stop-color="#f1cf85"/>
+      <stop offset="52%" stop-color="#c8a14e"/>
+      <stop offset="85%" stop-color="#7c5e26"/>
+      <stop offset="100%" stop-color="#4d3814"/>
+    </linearGradient>
+
+    <linearGradient id="goldShine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9a752b"/>
+      <stop offset="35%" stop-color="#f5da95"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#ecc878"/>
+      <stop offset="100%" stop-color="#7c5e26"/>
+    </linearGradient>
+
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0.8  0 1 0 0 0.65  0 0 1 0 0.3  0 0 0 0.35 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background: Deep Noir #000000 for screen-blend compatibility -->
+  <rect width="1024" height="1024" fill="#000000"/>
+
+  <!-- Crest Medallion Ring -->
+  <g filter="url(#goldGlow)">
+    <circle cx="512" cy="400" r="114" fill="none" stroke="url(#goldRing)" stroke-width="8"/>
+    <circle cx="512" cy="400" r="109" fill="none" stroke="#684b1a" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="512" cy="400" r="117.5" fill="none" stroke="#fff4cf" stroke-width="1.2" opacity="0.5"/>
+  </g>
+
+  <!-- Ornate Monogram 'L' -->
+  <!-- Calligraphic Serif L with flourishes -->
+  <g fill="url(#goldLetter)" stroke="#684b1a" stroke-width="0.8">
+    <!-- Main stem with calligraphic swashes -->
+    <path d="M 474 340 
+             C 474 322, 492 312, 514 312 
+             C 538 312, 552 328, 552 344 
+             C 552 358, 542 368, 530 368 
+             C 520 368, 512 360, 512 350 
+             C 512 340, 520 334, 526 332 
+             C 518 325, 502 325, 495 334 
+             C 488 344, 488 360, 489 378 
+             L 491 416 
+             C 492 435, 494 454, 498 464 
+             C 502 473, 510 478, 522 478 
+             C 542 478, 564 462, 574 446 
+             C 580 436, 584 424, 585 412 
+             C 586 404, 592 398, 600 398 
+             C 608 398, 614 405, 614 414 
+             C 613 434, 602 454, 585 470 
+             C 564 489, 536 498, 506 498 
+             C 475 498, 452 486, 444 466 
+             C 439 453, 438 436, 439 416 
+             C 440 398, 443 382, 448 370 
+             C 453 356, 462 348, 474 340 Z"/>
+    <!-- Left flourished accent loop -->
+    <path d="M 456 414 
+             C 442 414, 430 424, 430 438 
+             C 430 452, 442 462, 456 462 
+             C 470 462, 480 452, 480 438 
+             C 480 424, 468 414, 456 414 Z" opacity="0.85"/>
+  </g>
+
+  <!-- LORUM Wordmark in Chiselled Luxury Roman Serif -->
+  <g fill="url(#goldShine)" filter="url(#goldGlow)">
+    <text x="512" y="680" 
+          text-anchor="middle" 
+          font-family="'Playfair Display', 'Cormorant Garamond', 'Cinzel', 'Baskerville', 'Times New Roman', serif" 
+          font-size="124" 
+          font-weight="500" 
+          letter-spacing="28" 
+          stroke="url(#goldRing)" 
+          stroke-width="1.5"
+          style="text-transform: uppercase;">
+      LORUM
+    </text>
+  </g>
+
+  <!-- Fine Maison Subtitle / Accent -->
+  <text x="512" y="734" 
+        text-anchor="middle" 
+        font-family="'Manrope', 'Jost', 'Helvetica Neue', sans-serif" 
+        font-size="16" 
+        font-weight="400" 
+        fill="#ecc878" 
+        letter-spacing="14" 
+        opacity="0.85">
+    MAISON NOIR
+  </text>
+</svg>
